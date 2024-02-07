@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-// Importa React y el hook de estado 'useState' desde la biblioteca 'react'
+
 
 function SueldoForm({ onSueldoCalculado }) {
-  // Declara estados para manejar los valores del formulario
+
   const [nombre, setNombre] = useState('');
   const [horasTrabajo, setHorasTrabajo] = useState('');
   const [valorPagoHora, setValorPagoHora] = useState('');
 
-  // Declara una función llamada handleSubmit que se ejecuta cuando se envía el formulario
+
   const handleSubmit = (e) => {
-    e.preventDefault(); // Evita que la página se recargue al enviar el formulario
-    // Llama a la función proporcionada por la prop 'onSueldoCalculado' con los valores ingresados
+    e.preventDefault(); 
+
     onSueldoCalculado(nombre, parseFloat(horasTrabajo), parseFloat(valorPagoHora));
   };
 
-  // Devuelve un bloque de JSX que representa el formulario
+
   return (
     <form className='form' onSubmit={handleSubmit}>
       {/* Etiqueta y campo de entrada para el nombre */}
@@ -38,6 +38,4 @@ function SueldoForm({ onSueldoCalculado }) {
     </form>
   );
 }
-
-// Exporta el componente SueldoForm para su uso en otros archivos
 export default SueldoForm;
